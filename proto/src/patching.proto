@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.obsessiveorange.opxform;
+
+message Patch {
+  int64 baseVersion = 1;
+  int64 baseDocLength = 2;
+  repeated Diff diffs = 3;
+}
+
+message Diff {
+  int64 index = 1;
+  bool isInsertion = 2;
+  int64 count = 3;
+  string modification = 4;
+}
